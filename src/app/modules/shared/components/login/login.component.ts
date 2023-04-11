@@ -45,7 +45,7 @@ export class LoginComponent {
       next: (res) => {
         console.log(res.message);
 
-        this.router.navigate(['/logeado'])
+        this.router.navigate(['/inicio'])
         this.user = this._authService.obtenerInformacionToken();
         console.log(this.user);
         this.toastService.showSuccess('Bienvenid@ ' + this.user.nombre +' '+this.user.apellido, 'Sesión iniciada');
