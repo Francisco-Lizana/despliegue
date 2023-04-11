@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+}
+nav {
+  height: 60px;
+  width: 100%;
+  padding-left: 4%;
+  background-color:#2596be;
+  position: fixed;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+ color:white;
+ font-size:large;
+  
+}
+
