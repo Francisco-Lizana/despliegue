@@ -1,28 +1,28 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
+// Modulos
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './modules/shared/components/login/login.component';
-import { InicioComponent } from './modules/inicio/inicio.component';
+import { PagesRoutingModule } from './modules/pages/pages.routing';
+import { AauthRoutingModule } from './modules/auth/auth.routing';
+
+import { NopagefoundComponent } from './modules/pages/nopagefound/nopagefound.component';
+
+
+
+
 
 const routes: Routes = [
 
-  {
-    path: '',
-    redirectTo: '/iniciar-sesion', pathMatch: 'full'
-  },
-  {
-    path: 'iniciar-sesion',
-    component: LoginComponent
-  },
-  {
-    path: 'inicio',
-    component: InicioComponent
-  },
+ 
+  {path: '**',component: NopagefoundComponent},
  
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+  RouterModule.forRoot(routes),
+  PagesRoutingModule,
+  AauthRoutingModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

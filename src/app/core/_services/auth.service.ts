@@ -34,9 +34,25 @@ export class AuthService {
     );
   }
 
+  isLogged(){
+    try{
+      let token = localStorage.getItem('token');
+      if(token !== undefined && token !== null){
+        jwt_decode(token)
+        //Si no hubo errores en el decode entonces está logeado
+        return true;
+      }else{
+        return false;
+      }
+    }catch(err){
+      //console.log(err)
+      return false;
+    }
+  }
+
+
   logout(message:any = false, messageType:string = "info") {
     localStorage.clear();
-    //this.rolActualService.clear();
     if(typeof(message)==="string" && message.trim() !== ""){
       switch(messageType){
         case "info":
@@ -53,12 +69,12 @@ export class AuthService {
       }
       
     }    
-    this.router.navigate(['/iniciar-sesion']);
+    this.router.navigate(['/login']);
   }
 
-  forgot(body: any){
-    return this.genericServices.postGeneric('/recuperar', '', body)
-  }
+  // forgot(body: any){
+  //   return this.genericServices.postGeneric('/recuperar', '', body)
+  // }
 
   nuevaPassword(body: any, token: any){   
     return this.genericServices.postGenericHeader('/nueva-password', '',body,token)

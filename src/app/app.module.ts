@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// modulos
 import { AppRoutingModule } from './app-routing.module';
+import { PagesModule } from './modules/pages/pages.module';
+
+
+
 import { AppComponent } from './app.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,14 +14,21 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpInterceptorService } from './core/_services/http-interceptor.service';
 import { MessageService } from 'primeng/api';
 import { ToastService } from './core/_services/toast.service';
-import { InicioComponent } from './modules/inicio/inicio.component';
+import { InicioComponent } from './modules/pages/inicio/inicio.component';
+import { NopagefoundComponent } from './modules/pages/nopagefound/nopagefound.component';
+import { PagesComponent } from './modules/pages/pages.component';
+import { SidebarComponent } from './modules/shared/components/sidebar/sidebar.component';
+import { authModule } from './modules/auth/auth.module';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
+    NopagefoundComponent,
+    PagesComponent,
+    
     
   ],
   imports: [
@@ -24,7 +36,10 @@ import { InicioComponent } from './modules/inicio/inicio.component';
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,  
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    authModule,
+    PagesModule,
+   
     
   ],
   providers: [
