@@ -1,0 +1,22 @@
+/* Estilos para el side bar */
+.sidebar {
+    position: fixed;
+    top: 50px; /* Igual a la altura del header */
+    left: 0;
+    width: 250px;
+    height: calc(100% - 50px); /* Toma el 100% de la altura disponible menos la altura del header */
+    background-color: #f8f9fa; /* Color de fondo del side bar */
+    overflow-y: auto;
+    z-index: 1; /* Para que quede por encima del contenido principal */
+  }
+  
+  /* Estilos para el contenido principal */
+  .main-content {
+    margin-left: 250px; /* Ancho del side bar */
+    padding: 20px;
+  }
+  /* CSS para ocultar el sidebar cuando el header está minimizado */
+body.mini-sidebar .left-sidebar {
+    display: none;
+  }
+  

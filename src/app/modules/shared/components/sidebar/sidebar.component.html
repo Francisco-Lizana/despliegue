@@ -1,45 +1,53 @@
-<!-- ============================================================== -->
-<!-- Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
+<link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+
 <aside class="left-sidebar">
-    <!-- Sidebar scroll-->
-    <div class="scroll-sidebar">
+    <div class="scroll-sidebar" >
+        <div class="user-profile" style="text-align: center;">
+            <div class="user-pro-body">
+                <div class="dropdown">
+                    <h4 style="text-align: left;">Perfil</h4>
+                    <a href="#" class="dropdown-toggle u-dropdown link hide-menu"
+                     role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false" >
+                      {{ nombreUsuario }}
+                        <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu animated flipInY">
+                        <a href="acccount-seting" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" (click)="onLogout()" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li class="user-profile">
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="./assets/images/users/profile.png" alt="user" /><span class="hide-menu">Steave Jobs </span></a>
-                    <ul aria-expanded="false" class="collapse">
-                        <li><a href="javascript:void()">My Profile </a></li>
-                        <li><a href="javascript:void()">My Balance</a></li>
-                        <li><a href="javascript:void()">Inbox</a></li>
-                        <li><a routerLink="acccount-seting">Account Setting</a></li>
-                        <li><a href="javascript:void()">Logout</a></li>
-                    </ul>
-                </li>
                 <li class="nav-devider"></li>
-                <li class="nav-small-cap">PERSONAL</li>
-                <li *ngFor="let item of menuItems"> 
-                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-                    <i class="mdi mdi-gauge"></i>
-                    <span class="hide-menu">{{item.titulo}} 
-                        <span class="label label-rouded label-themecolor pull-right">
-                            {{item.submenu.length}}</span></span></a>
+                <li class="nav-small-cap ui-elements">PROFESIONAL</li>
+                <li class="has-sub"> 
+                    <a href="#" aria-expanded="false">
+                        <i class="mdi mdi-hospital-box-outline"></i>
 
-                    <ul aria-expanded="false" class="collapse">
-                        <li *ngFor="let subItem of item.submenu">
-                            <a [routerLink]="subItem.utl">{{subItem.titulo}} </a>
-                        </li>
-
-                    </ul>
+                        <span class="hide-menu">Agendas</span>
+                    </a>
                 </li>
-                
+                <li> 
+                    <a href="#" aria-expanded="false">
+                        <i class="mdi mdi-stethoscope"></i>
+                        <span class="hide-menu">Servicios</span>
+                    </a>
+                </li>
+                <li class="nav-small-cap ui-elements">PACIENTES</li>
+                <li> <a href="#" aria-expanded="false">
+                    <i class="mdi mdi-account-heart-outline"></i>
+                    <span class="hide-menu">Paciente</span></a>
+                </li>
+                <li> <a href="#" aria-expanded="false">
+                    <i class="mdi mdi-clipboard-pulse-outline"></i>
+                    <span class="hide-menu">Ficha Clinica</span></a>
+                </li>
             </ul>
         </nav>
-        <!-- End Sidebar navigation -->
     </div>
-    <!-- End Sidebar scroll-->
 </aside>
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->

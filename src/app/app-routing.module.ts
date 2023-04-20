@@ -6,15 +6,9 @@ import { AauthRoutingModule } from './modules/auth/auth.routing';
 
 import { NopagefoundComponent } from './modules/pages/nopagefound/nopagefound.component';
 
-
-
-
-
 const routes: Routes = [
 
- 
   {path: '**',component: NopagefoundComponent},
- 
 
 ];
 

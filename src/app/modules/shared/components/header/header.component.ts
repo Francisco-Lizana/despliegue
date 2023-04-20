@@ -18,10 +18,7 @@ export class HeaderComponent {
     private toastService: ToastService,
   ) { }
 
-  onLogout(): void {
-    this._authService.logout();
-    this.router.navigate(['/login']);
-  }
+ 
   
 
 }
