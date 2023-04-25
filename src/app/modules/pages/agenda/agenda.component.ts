@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AgendaService } from 'src/app/core/_services/agenda.service';
+import { AuthService } from 'src/app/core/_services/auth.service';
 import { ToastService } from 'src/app/core/_services/toast.service';
 
 
@@ -12,29 +13,33 @@ export class AgendaComponent implements OnInit {
 
   agendas: any[] = [];
   rutBuscado: string = '';
-  ordenAscendente: boolean = true;
-  inicio: number = 0;
+  userInfo: any;
   numAgendasPorPagina: number = 5;
-paginaActual: number = 1;
-  constructor(private agendaService: AgendaService, private toastService: ToastService,) { }
+  paginaActual: number = 1;
+  constructor(
+    private agendaService: AgendaService,
+     private toastService: ToastService,
+     private _authService: AuthService) { }
 
   ngOnInit(): void {
+    this.userInfo = this._authService.obtenerInformacionToken();
     this.obtenerAgendas();
+    
   }
 
   obtenerAgendas(): void {
-    this.agendaService.obtenerAgendas().subscribe(respuesta => {
+    this.agendaService.obtenerAgendasProfesional(this.userInfo.id).subscribe(respuesta => {
       this.agendas = respuesta.agendas;
-      console.log(this.agendas);
     });
   }
+
 
   buscarAgendas(): void {
     if (this.rutBuscado) {
       this.agendaService.obtenerAgendasPorRut(this.rutBuscado).subscribe(
         respuesta => {
           this.agendas = respuesta.agendas;
-          this.toastService.showSuccess('Agendas encontradas');
+         
         },
         error => {
           this.obtenerAgendas();

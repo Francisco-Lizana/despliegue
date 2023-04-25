@@ -16,6 +16,9 @@ export class AgendaService {
   obtenerAgendasPorRut(rut: string): Observable<any> {
     return this.http.get(`${this.base_url}/obtenerAgendasPorRut/${rut}`);
   }
+  obtenerAgendasProfesional(id_profesional: string): Observable<any> {
+    return this.http.get(`${this.base_url}/obtenerAgendasProfesional/${id_profesional}`);
+  }
   
   agregarAgenda(agenda: any): Observable<any> {
     return this.http.post(`${this.base_url}/agregarAgenda`, agenda);
@@ -24,4 +27,9 @@ export class AgendaService {
   editarAgenda(id: number, agenda: any): Observable<any> {
     return this.http.post(`${this.base_url}/editarAgenda/${id}`, agenda);
   }
+
+  contar(): Observable<any> {
+    return this.http.get(`${this.base_url}/contar`);
+  }
 }
+
