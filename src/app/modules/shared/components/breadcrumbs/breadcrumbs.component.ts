@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breadcrumbs.component.css']
 })
 export class BreadcrumbsComponent implements OnInit {
+  titulo = 'Blank Page';
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // Obtener los datos de la ruta activa al momento en que se carga la página
+    const data = this.activatedRoute.snapshot.firstChild?.data;
+    this.titulo = data?.['titulo'] || 'Blank Page';
+    
   }
-
 }

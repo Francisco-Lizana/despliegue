@@ -1,0 +1,46 @@
+<div class="container">
+
+
+  <div class="row">
+    <div class="col-md-4 d-flex align-items-center">
+      <div class="form-group mr-2">
+        <label for="rutBuscado">Buscar por Rut:</label>
+        <input type="text" id="rutBuscado" [(ngModel)]="rutBuscado" class="form-control" />
+      </div>
+      <button class="btn btn-primary ml-2" (click)="buscarAgendas()">Buscar</button>
+    </div>
+  </div>
+  
+
+  <div class="table-responsive mt-3" *ngIf="agendas">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Paciente</th>
+          <th>Rut</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Servicio</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let agenda of agendas.slice((paginaActual - 1) * numAgendasPorPagina, paginaActual * numAgendasPorPagina)">
+          <td>{{ agenda.paciente.nombre }} {{ agenda.paciente.apellido }}</td>
+          <td>{{ agenda.paciente.rut }}</td>
+          <td>{{ agenda.fecha_agendamiento | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ agenda.hora_agendamiento }}</td>
+          <td>{{ agenda.servicio.nombre }}</td>
+          <td>{{ agenda.estado.status }}</td>
+          <td>Acciones</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-3">
+    <button class="btn btn-primary mr-2" [disabled]="paginaActual === 1" (click)="paginaActual = paginaActual - 1">Anterior</button>
+    <button class="btn btn-primary" [disabled]="paginaActual * numAgendasPorPagina >= agendas.length" (click)="paginaActual = paginaActual + 1">Siguiente</button>
+  </div>
+</div>

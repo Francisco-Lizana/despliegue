@@ -8,6 +8,10 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NgChartsModule } from 'ng2-charts';
 import { GraficaPieComponent } from './grafica-pie/grafica-pie.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { ProfesionalInformacionComponent } from './account-settings/profesional-informacion/profesional-informacion.component';
+import { AgendaComponent } from './agenda/agenda.component';
+import { HoraPipe } from '../../core/_pipes/hora.pipe';
+import { AgendaListComponent } from './agenda/agenda-list/agenda-list.component';
 
 
 @NgModule({
@@ -16,6 +20,12 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     InicioComponent,
     AccountSettingsComponent,
     GraficaPieComponent,
+    ProfesionalInformacionComponent,
+    AgendaComponent,
+    HoraPipe,
+    AgendaListComponent,
+
+
     
   ],exports: [
     DashboardComponent,

@@ -17,7 +17,8 @@ export class AuthService {
   
 
 
-  constructor(private http: HttpClient, 
+  constructor(
+    private http: HttpClient, 
     private router:Router, 
     private genericServices: GenericService,
     private messageService:MessageService,

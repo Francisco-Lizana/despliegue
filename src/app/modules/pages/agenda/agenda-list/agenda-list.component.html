@@ -1,0 +1,38 @@
+<div class="table-responsive mt-3" *ngIf="agendas.length > 0">
+
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Paciente</th>
+        <th>Rut</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Servicio</th>
+        <th class="encabezado-columna">
+          <button class="btn btn-link" (click)="ordenarPorEstado()">
+            Estado
+            <span *ngIf="ordenAscendente">▼</span>
+            <span *ngIf="!ordenAscendente">▲</span>
+          </button>
+        </th>
+        
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let agenda of agendas | slice:inicio:(inicio + 5)">
+        <td>{{ agenda.paciente.nombre }} {{ agenda.paciente.apellido }}</td>
+        <td>{{ agenda.paciente.rut }}</td>
+        <td>{{ agenda.fecha_agendamiento | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ agenda.hora_agendamiento }}</td>
+        <td>{{ agenda.servicio.nombre }}</td>
+        <td>{{ agenda.estado.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-primary" (click)="cambiarPagina(-5)" [disabled]="inicio === 0">Anterior</button>
+    <button class="btn btn-primary ms-3" (click)="cambiarPagina(5)" [disabled]="inicio >= agendas.length - 5">Siguiente</button>
+  </div>
+</div>
