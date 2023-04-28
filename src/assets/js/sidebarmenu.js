@@ -1,4 +1,9 @@
-
+/*
+Template Name: Admin Pro Admin
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: js
+*/
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
     define(['jquery'], factory);
@@ -325,9 +330,7 @@
      * jQuery
      * ------------------------------------------------------------------------
      */
-    $(function() {
-      $('#sidebarnav').AdminMenu();
-   });
+
     $.fn[NAME] = AdminMenu._jQueryInterface;
     $.fn[NAME].Constructor = AdminMenu;
     $.fn[NAME].noConflict = function () {

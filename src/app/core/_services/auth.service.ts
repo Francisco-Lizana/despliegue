@@ -92,14 +92,14 @@ export class AuthService {
     if(token === undefined || token === null){
       this.toastService.showError("Ocurrió un problema con la sesión, por favor ingrese nuevamente")
       localStorage.clear();
-      // this.router.navigate(['/iniciar-sesion'])
+     
     }else{
       try{
         return jwt_decode(token);
       }catch(err){
         this.toastService.showError("Ocurrió un problema con la sesión, por favor ingrese nuevamente")
         localStorage.clear();
-        // this.router.navigate(['/iniciar-sesion'])
+       
       }
     }
   }

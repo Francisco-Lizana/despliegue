@@ -12,6 +12,8 @@ import { ProfesionalInformacionComponent } from './account-settings/profesional-
 import { AgendaComponent } from './agenda/agenda.component';
 import { HoraPipe } from '../../core/_pipes/hora.pipe';
 import { AgendaListComponent } from './agenda/agenda-list/agenda-list.component';
+import { ServiciosComponent } from './servicios/servicios.component';
+import { FormatoCostoPipe } from 'src/app/core/_pipes/formatoMoneda.pipe';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { AgendaListComponent } from './agenda/agenda-list/agenda-list.component'
     AgendaComponent,
     HoraPipe,
     AgendaListComponent,
+    FormatoCostoPipe,
+    ServiciosComponent,
 
 
     

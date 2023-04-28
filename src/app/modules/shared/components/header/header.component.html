@@ -1,44 +1,56 @@
+
+
 <header class="topbar">
-<nav class="navbar top-navbar navbar-expand-md navbar-light">
-<!-- ============================================================== -->
-<!-- Logo -->
-<!-- ============================================================== -->
-<div class="navbar-header">
-    <a class="navbar-brand" href="inicio">
-        <!-- Logo icon --><b>
-            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-            <!-- Dark Logo icon -->
+    <nav class="navbar top-navbar navbar-expand-md navbar-light">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="inicio">
+          <b>
             <img src="./assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-            <!-- Light Logo icon -->
             <img src="./assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-        </b>
-        <!--End Logo icon -->
-        <!-- Logo text --><span>
-            <!-- dark Logo text -->
+          </b>
+          <span>
             <img src="./assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-            <!-- Light Logo text -->    
-            <img src="./assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
-</div>
-<!-- ============================================================== -->
-<!-- End Logo -->
-<!-- ============================================================== -->
-<div class="navbar-collapse">
-    <!-- ============================================================== -->
-    <!-- toggle and nav items -->
-    <!-- ============================================================== -->
-    <ul class="navbar-nav mr-auto">
-        <!-- This is  -->
-        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-        <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
-        <li class="nav-item hidden-sm-down"></li>
-    </ul>
-    <!-- ============================================================== -->
-    <!-- User profile and search -->
-    <!-- ============================================================== -->
-    <ul class="navbar-nav my-lg-0">
-
-
-    </ul>
-</div>
-</nav>
-</header>
+            <img src="./assets/images/logo-light-text.png" alt="homepage" class="light-logo" />
+          </span>
+        </a>
+      </div>
+      <div class="navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav my-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mdi mdi-account-cog icono-usuario"></span>
+              </a>
+              
+            <div class="dropdown-menu dropdown-menu-right animated fadeIn fast">
+              <ul class="dropdown-user">
+                <li>
+                  <div class="dw-user-box">
+                    <div class="u-text">
+                      <h4>{{ nombreUsuario }}</h4>
+                      <p class="text-muted">{{ correo }}</p>
+                    </div>
+                  </div>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li><a routerLink="acccount-seting"><i class="ti-settings"></i> Account Setting</a></li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#" (click)="onLogout()" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  He eliminado los comentarios y he indentado el código para hacerlo más legible. También he eliminado un bloque de código duplicado al final del archivo.

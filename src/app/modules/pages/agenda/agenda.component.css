@@ -1,7 +1,11 @@
 
-  
+.botones {
+  margin-right: 10px;
+}
+
   .table {
     margin-top: 1.5rem;
+
   }
   
   .form-group {
@@ -11,4 +15,17 @@
   .btn {
     margin-top: 1rem;
   }
+
+  .table thead th {
+    background-color:cornflowerblue;
+  }
+  /* Preguntar por los bordes */
+  table, th, td {
+    border: 1px solid black;
+  }
   
+  td {
+    border: 1px solid black;
+  }
+  
+    

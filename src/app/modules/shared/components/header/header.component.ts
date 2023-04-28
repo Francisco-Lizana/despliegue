@@ -11,7 +11,9 @@ import { ToastService } from '../../../../core/_services/toast.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  nombreUsuario: string | undefined;
+  correo: string | undefined;
+  userInfo: any;
   constructor(
     private readonly router: Router,
     private _authService: AuthService,
@@ -19,6 +21,22 @@ export class HeaderComponent {
   ) { }
 
  
+  ngOnInit(): void {
+    this.nombreUsuar();
+  }
+
+    
+  onLogout(): void {
+    this._authService.logout();
+    this.router.navigate(['/login']);
+  }
   
+  nombreUsuar(): void {
+    this.userInfo = this._authService.obtenerInformacionToken();
+    console.log(this.userInfo);
+    this.nombreUsuario = `${this.userInfo.nombre} ${this.userInfo.apellido}`;
+    this.correo = `${this.userInfo.email} `;
+
+  }
 
 }

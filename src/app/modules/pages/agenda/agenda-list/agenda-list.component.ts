@@ -13,17 +13,19 @@ export class AgendaListComponent implements OnInit {
   inicio: number = 0;
   userInfo: any;
 
-  constructor(private agendaService: AgendaService,private _authService: AuthService,) { }
+  constructor(
+    private agendaService: AgendaService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
-    this.userInfo = this._authService.obtenerInformacionToken();
+    this.userInfo = this.authService.obtenerInformacionToken();
     this.obtenerAgendas();
   }
 
   obtenerAgendas(): void {
     this.agendaService.obtenerAgendasProfesional(this.userInfo.id).subscribe(respuesta => {
       this.agendas = respuesta.agendas;
-
 
       this.agendas.sort((a, b) => {
         if (b.estado.status < a.estado.status) {
@@ -37,7 +39,6 @@ export class AgendaListComponent implements OnInit {
     });
   }
 
-
   ordenarPorEstado(): void {
     this.agendas.reverse();
     this.ordenAscendente = !this.ordenAscendente;
@@ -45,5 +46,11 @@ export class AgendaListComponent implements OnInit {
 
   cambiarPagina(valor: number): void {
     this.inicio += valor;
+  }
+
+  obtenerTextoPaginacion(): string {
+    const paginaActual = Math.floor(this.inicio / 5) + 1;
+    const totalPaginas = Math.ceil(this.agendas.length / 5);
+    return `Página ${paginaActual} de ${totalPaginas}`;
   }
 }

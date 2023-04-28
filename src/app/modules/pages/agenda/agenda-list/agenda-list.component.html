@@ -32,8 +32,13 @@
       </tr>
     </tbody>
   </table>
-  <div class="d-flex justify-content-end mb-3">
-    <button class="btn btn-primary" (click)="cambiarPagina(-5)" [disabled]="inicio === 0">Anterior</button>
-    <button class="btn btn-primary ms-3" (click)="cambiarPagina(5)" [disabled]="inicio >= agendas.length - 5">Siguiente</button>
+  
+  <div class="d-flex justify-content-between mb-3">
+    <p class="mb-0">{{ obtenerTextoPaginacion() }}</p>
+    <div>
+      <button class="btn btn-primary" (click)="cambiarPagina(-5)" [disabled]="inicio === 0">Anterior</button>
+      <button class="btn btn-primary ms-3" (click)="cambiarPagina(5)" [disabled]="inicio >= agendas.length - 5">Siguiente</button>
+    </div>
   </div>
+  
 </div>

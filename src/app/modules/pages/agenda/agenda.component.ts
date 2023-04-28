@@ -10,7 +10,7 @@ import { ToastService } from 'src/app/core/_services/toast.service';
   styleUrls: ['./agenda.component.css']
 })
 export class AgendaComponent implements OnInit {
-
+  inicio: number = 0;
   agendas: any[] = [];
   rutBuscado: string = '';
   userInfo: any;
@@ -51,6 +51,15 @@ export class AgendaComponent implements OnInit {
     }
   }
   
+  cambiarPagina(valor: number): void {
+    this.inicio += valor;
+  }
+
+  obtenerTextoPaginacion(): string {
+    const paginaActual = Math.floor(this.inicio / 5) + 1;
+    const totalPaginas = Math.ceil(this.agendas.length / 5);
+    return `Página ${paginaActual} de ${totalPaginas}`;
+  }
 
 
 }
