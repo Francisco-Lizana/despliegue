@@ -14,6 +14,12 @@ import { HoraPipe } from '../../core/_pipes/hora.pipe';
 import { AgendaListComponent } from './agenda/agenda-list/agenda-list.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { FormatoCostoPipe } from 'src/app/core/_pipes/formatoMoneda.pipe';
+import { PacientesComponent } from './pacientes/pacientes.component';
+import { FichaClinicaComponent } from './ficha-clinica/ficha-clinica.component';
+import { ModificarServicioComponent } from './servicios/modificar-servicio/modificar-servicio.component';
+import { AgregarServicioComponent } from './servicios/agregar-servicio/agregar-servicio.component';
+import { EliminarServicioComponent } from './servicios/eliminar-servicio/eliminar-servicio.component';
+import { AnadirServicioComponent } from './servicios/anadir-servicio/anadir-servicio.component';
 
 
 @NgModule({
@@ -28,7 +34,13 @@ import { FormatoCostoPipe } from 'src/app/core/_pipes/formatoMoneda.pipe';
     AgendaListComponent,
     FormatoCostoPipe,
     ServiciosComponent,
-
+    PacientesComponent,
+    FichaClinicaComponent,
+    
+    ModificarServicioComponent,
+    AgregarServicioComponent,
+    EliminarServicioComponent,
+    AnadirServicioComponent
 
     
   ],exports: [

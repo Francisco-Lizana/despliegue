@@ -13,8 +13,8 @@ export class AgendaService {
     return this.http.get(`${this.base_url}/obtenerAgendas`);
   }
 
-  obtenerAgendasPorRut(rut: string): Observable<any> {
-    return this.http.get(`${this.base_url}/obtenerAgendasPorRut/${rut}`);
+  obtenerAgendasPorRut(rutPaciente: string,id_profesional:string): Observable<any> {
+    return this.http.get(`${this.base_url}/obtenerAgendasPorRut/${rutPaciente}/${id_profesional}`);
   }
   obtenerAgendasProfesional(id_profesional: string): Observable<any> {
     return this.http.get(`${this.base_url}/obtenerAgendasProfesional/${id_profesional}`);

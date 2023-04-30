@@ -18,6 +18,7 @@
 
   .table thead th {
     background-color:cornflowerblue;
+    color:aliceblue;
   }
   /* Preguntar por los bordes */
   table, th, td {

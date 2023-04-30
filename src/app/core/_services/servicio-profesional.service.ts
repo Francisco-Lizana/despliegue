@@ -12,7 +12,34 @@ export class servicioService {
       private http: HttpClient, 
       ) { }
       
-      obtenerServiciosPorProfesional(id_profesional: number): Observable<any> {
+    obtenerServiciosPorProfesional(id_profesional: number): Observable<any> {
     return this.http.get(`${this.base_url}/profesionales/${id_profesional}/servicios`);
   }
+  obtenerServiciosNoRelacionadosPorProfesional(id_profesional: number): Observable<any> {
+    return this.http.get(`${this.base_url}/obtenerServiciosNoRelacionadosPorProfesional/${id_profesional}`);
+  }
+  
+  obtenerServiciosPorNombre(nombre: string): Observable<any> {
+    return this.http.get(`${this.base_url}/servicio/${nombre}`);
+  }
+
+  actualizarInformacionServicio(id: number, data: any) {
+    return this.http.post(`${this.base_url}/editarServicio/${id}`, data);
+    }
+    
+  agregarServicio( data: any) {
+    return this.http.post(`${this.base_url}/addServicio`, data);
+    }
+
+    agregarServicioAProfesional(id_servicio: number, id_profesional: number) {
+      const data = {id_profesional: id_profesional, id_servicio: id_servicio };
+      return this.http.post(`${this.base_url}/agregarNuevoProfesionalServicio`, data);
+    }
+    
+
+  eliminarServicioAProfesional( id_servicio: number, id_profesional: number) {
+    const data = {id_profesional: id_profesional, id_servicio: id_servicio };
+    return this.http.post(`${this.base_url}/eliminarServicioDeProfesional`, data);
+    }
+    
 }

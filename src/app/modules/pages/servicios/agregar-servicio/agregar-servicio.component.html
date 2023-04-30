@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-body">
+      <div class="row">
+        <h4>Agregar servicio</h4>
+        <div class="col-12 d-flex align-items-center">
+            <form [formGroup]="servicioFrom" class="d-flex justify-content-between">
+                <div class="form-group mr-2">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" placeholder="Nombre del servicio"style="width: 200px;" formControlName="nombre" class="form-control">
+                </div>
+                <div class="form-group mr-2">
+                  <label for="costo">Costo:</label>
+                  <input type="text" placeholder="Costo del servicio" style="width: 200px;" formControlName="costo" class="form-control"  [value]="servicioFrom.controls['costo'].value ">
+                </div>
+              </form>
+        </div>
+        <div class="col-12">
+
+        <div class="col-12 d-flex justify-content-left">
+          <button class="btn btn-primary mt-2" (click)="agregarServicio()">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

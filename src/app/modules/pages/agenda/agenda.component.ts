@@ -36,7 +36,7 @@ export class AgendaComponent implements OnInit {
 
   buscarAgendas(): void {
     if (this.rutBuscado) {
-      this.agendaService.obtenerAgendasPorRut(this.rutBuscado).subscribe(
+      this.agendaService.obtenerAgendasPorRut(this.rutBuscado,this.userInfo.id).subscribe(
         respuesta => {
           this.agendas = respuesta.agendas;
          
