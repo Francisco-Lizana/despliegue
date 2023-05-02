@@ -16,6 +16,7 @@ export class AgendaComponent implements OnInit {
   userInfo: any;
   numAgendasPorPagina: number = 5;
   paginaActual: number = 1;
+  mostrarAnadirAgenda = false;
   constructor(
     private agendaService: AgendaService,
      private toastService: ToastService,
@@ -59,6 +60,11 @@ export class AgendaComponent implements OnInit {
     const paginaActual = Math.floor(this.inicio / 5) + 1;
     const totalPaginas = Math.ceil(this.agendas.length / 5);
     return `Página ${paginaActual} de ${totalPaginas}`;
+  }
+
+  mostrarComponenteAgregarAgenda() {
+    this.mostrarAnadirAgenda = true;
+
   }
 
 

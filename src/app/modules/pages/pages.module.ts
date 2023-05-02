@@ -20,6 +20,9 @@ import { ModificarServicioComponent } from './servicios/modificar-servicio/modif
 import { AgregarServicioComponent } from './servicios/agregar-servicio/agregar-servicio.component';
 import { EliminarServicioComponent } from './servicios/eliminar-servicio/eliminar-servicio.component';
 import { AnadirServicioComponent } from './servicios/anadir-servicio/anadir-servicio.component';
+import { AgregarAgendaComponent } from './agenda/agregar-agenda/agregar-agenda.component';
+
+
 
 
 @NgModule({
@@ -40,7 +43,8 @@ import { AnadirServicioComponent } from './servicios/anadir-servicio/anadir-serv
     ModificarServicioComponent,
     AgregarServicioComponent,
     EliminarServicioComponent,
-    AnadirServicioComponent
+    AnadirServicioComponent,
+    AgregarAgendaComponent
 
     
   ],exports: [
@@ -50,10 +54,13 @@ import { AnadirServicioComponent } from './servicios/anadir-servicio/anadir-serv
     AccountSettingsComponent,
   ],
   imports: [
+
     CommonModule,
     SharedModule,
     RouterModule,
     NgChartsModule,
+
+    
   ]
 })
 export class PagesModule { }

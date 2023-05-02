@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Añadir agenda</h5>
+    <form>
+      <div class="form-group max-height">
+        <label for="pacientes">Pacientes:</label>
+        <input type="text" class="form-control" name="nombre" placeholder="Buscar..." [(ngModel)]="searchText" (focus)="mostrarLista = true">
+        <ul class="list-group mt-2" *ngIf="mostrarLista">
+          <li class="list-group-item" *ngFor="let paciente of filtrarOpciones(searchText)" (click)="seleccionarPaciente(paciente)">{{ paciente.nombre }}</li>
+        </ul>
+      </div>
+    </form>
+
+
+ 
+    
+    <!-- formulario para ingresar un agendamiento -->
+    <form [formGroup]="servicioFrom" class="d-flex justify-content-between">
+      <div class="form-group mr-2">
+        <label for="fecha_agendamiento">Fecha:</label>
+        <input type="text"  formControlName="fecha_agendamiento" class="form-control">
+      </div>
+      <div class="form-group mr-2">
+        <label for="hora_agendamiento">Hora:</label>
+        <input type="text"  formControlName="hora_agendamiento" class="form-control">
+      </div>
+      <div class="form-group mr-2">
+
+        <label for="servicio">Servicio:</label>
+        <select id="servicio" class="form-control" [(ngModel)]="servicioSeleccionado" name="servicio" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let servicio of servicios" [ngValue]="servicio.nombre">{{ servicio.nombre }}</option>
+      </select>
+      </div>
+    </form>
+    
+  </div>
+</div>

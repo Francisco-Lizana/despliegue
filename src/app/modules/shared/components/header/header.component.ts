@@ -33,7 +33,7 @@ export class HeaderComponent {
   
   nombreUsuar(): void {
     this.userInfo = this._authService.obtenerInformacionToken();
-    console.log(this.userInfo);
+
     this.nombreUsuario = `${this.userInfo.nombre} ${this.userInfo.apellido}`;
     this.correo = `${this.userInfo.email} `;
 
