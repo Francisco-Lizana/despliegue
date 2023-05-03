@@ -26,7 +26,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MessageService } from 'primeng/api';
 import { CommonModule } from '@angular/common';
-import { NgxCaptchaModule } from 'ngx-captcha';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {AvatarModule} from 'primeng/avatar';
 import {RouterModule} from '@angular/router'
@@ -77,7 +76,7 @@ declarations: [
 
 ],
 imports: [
-
+    RouterModule,
     MatCardModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -89,22 +88,18 @@ imports: [
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    BreadcrumbModule,
     ImageModule,
-    RouterModule,
     InputTextModule,
     StepsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    NgxCaptchaModule,
     PanelMenuModule,
     AvatarModule,
     CardModule,
     CheckboxModule,
     TabViewModule,
-    FormsModule,
     MatAutocompleteModule,
     MatGridListModule,
     ChipModule,
@@ -155,9 +150,7 @@ exports: [
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    NgxCaptchaModule,
     PanelMenuModule,
-    BreadcrumbModule,
     DynamicDialogModule,
     ToolbarModule,
     TooltipModule,
