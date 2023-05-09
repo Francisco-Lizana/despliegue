@@ -70,6 +70,14 @@ export class ProfesionalInformacionComponent implements OnInit {
     this.ngOnInit();
   }
 
+  onRutInput(event: any) {
+    let rut = event.target.value.replace(/[^\d]/g, ''); // Eliminar todo excepto los dígitos
+    rut = rut.substring(0, rut.length - 1) + '-' + rut.substring(rut.length - 1); // Insertar guión antes del dígito verificador
+    rut = rut.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1.'); // Agregar puntos de separación de miles
+    this.profesionalForm.patchValue({ rut: rut });
+  }
+
+
   guardarCambios(): void {
     this.mostrarInformacion = true;
 
@@ -83,8 +91,6 @@ export class ProfesionalInformacionComponent implements OnInit {
           this.ngOnInit();
         }
       );
-
   }
-  
 }
 }

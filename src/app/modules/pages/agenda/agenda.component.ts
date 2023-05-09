@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AgendaService } from 'src/app/core/_services/agenda.service';
 import { AuthService } from 'src/app/core/_services/auth.service';
 import { ToastService } from 'src/app/core/_services/toast.service';
@@ -17,6 +17,10 @@ export class AgendaComponent implements OnInit {
   numAgendasPorPagina: number = 5;
   paginaActual: number = 1;
   mostrarAnadirAgenda = false;
+  mostrarEditarAgenda=false;
+
+  @Output() cambiosRealizados = new EventEmitter();
+  
   constructor(
     private agendaService: AgendaService,
      private toastService: ToastService,
@@ -25,6 +29,7 @@ export class AgendaComponent implements OnInit {
   ngOnInit(): void {
     this.userInfo = this._authService.obtenerInformacionToken();
     this.obtenerAgendas();
+
     
   }
 
@@ -67,5 +72,16 @@ export class AgendaComponent implements OnInit {
 
   }
 
+  mostrarComponenteEditarAgenda(idAgenda:number) {
+    this.agendaService.enviarIdAgenda(idAgenda);
+    this.mostrarEditarAgenda = true;
+  }
+
+  
+  actualizarAgendas(){
+    this.mostrarAnadirAgenda = false;
+    this.mostrarEditarAgenda = false;
+    this.obtenerAgendas();
+  }
 
 }

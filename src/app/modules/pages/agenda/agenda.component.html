@@ -1,14 +1,20 @@
-<div class="card col-md-6" *ngIf="mostrarAnadirAgenda">
-  <app-agregar-agenda ></app-agregar-agenda>
+<div class="card col-md-12" *ngIf="mostrarAnadirAgenda">
+  <app-agregar-agenda (cambiosRealizados)="actualizarAgendas()"></app-agregar-agenda>
 </div>
+
+<div class="card col-md-12" *ngIf="mostrarEditarAgenda">
+  <app-editar-agenda (cambiosRealizados)="actualizarAgendas()"></app-editar-agenda>
+</div>
+
+
 <div class="card">
   <div class="card-body">
     <div class="container">
 
       <div class="row">
-        <div class="col-md-6 d-flex align-items-center">
+        <div class="col-md-12 d-flex align-items-center">
           <div class="form-group mr-2">
-            <label for="rutBuscado">Buscar por Rut:</label>
+            <h4>Buscar agendas por rut:</h4>
             <input type="text" id="rutBuscado" placeholder="Ingrese su rut" [(ngModel)]="rutBuscado" class="form-control" />
           </div>
           <div class="botones">
@@ -37,17 +43,24 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let agenda of agendas.slice((paginaActual - 1) * numAgendasPorPagina, paginaActual * numAgendasPorPagina)">
-              <td>{{ agenda.paciente.nombre }} {{ agenda.paciente.apellido }}</td>
-              <td>{{ agenda.paciente.rut }}</td>
-              <td>{{ agenda.fecha_agendamiento | date: 'dd/MM/yyyy' }}</td>
-              <td>{{ agenda.hora_agendamiento }}</td>
-              <td>{{ agenda.servicio.nombre }}</td>
-              <td>{{ agenda.estado.status }}</td>
-              <td>
-                <button class="btn btn-primary btn-sm mr-2">Editar</button>
-              </td>
-            </tr>
+              <tr *ngFor="let agenda of agendas.slice((paginaActual - 1) * numAgendasPorPagina, paginaActual * numAgendasPorPagina)">
+                <td style="text-align: left; vertical-align: middle;">{{ agenda.paciente.nombre }} {{ agenda.paciente.apellido }}</td>
+                <td style="text-align: left; vertical-align: middle;">{{ agenda.paciente.rut }}</td>
+                <td style="text-align: left; vertical-align: middle;">{{ agenda.fecha_agendamiento | date: 'dd/MM/yyyy' }}</td>
+                <td style="text-align: left; vertical-align: middle;"> {{ agenda.hora_agendamiento | hora | date: 'H:mm' }}</td>
+                <td style="text-align: left; vertical-align: middle;">{{ agenda.servicio.nombre }}</td>
+                <td style="text-align: left; vertical-align: middle;">{{ agenda.estado.status }}</td>
+                <td class="text-center">
+                  <div class="d-inline-block">
+                    <button class="btn btn-primary" (click)="mostrarComponenteEditarAgenda(agenda.id_agenda)">Editar</button>
+                  </div>
+                  
+                </td>
+                
+              </tr>
+
+            
+              
           </tbody>
         </table>
       </div>

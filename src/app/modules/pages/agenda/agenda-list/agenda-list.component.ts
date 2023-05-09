@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AgendaService } from 'src/app/core/_services/agenda.service';
 import { AuthService } from 'src/app/core/_services/auth.service';
 
@@ -12,7 +12,8 @@ export class AgendaListComponent implements OnInit {
   ordenAscendente: boolean = true;
   inicio: number = 0;
   userInfo: any;
-
+  mostrarEditarAgenda=false;
+  @Output() cambiosRealizados = new EventEmitter();
   constructor(
     private agendaService: AgendaService,
     private authService: AuthService
@@ -38,6 +39,10 @@ export class AgendaListComponent implements OnInit {
       });
     });
   }
+  mostrarComponenteEditarAgenda(idAgenda:number) {
+    this.agendaService.enviarIdAgenda(idAgenda);
+    this.mostrarEditarAgenda = true;
+  }
 
   ordenarPorEstado(): void {
     this.agendas.reverse();
@@ -52,5 +57,11 @@ export class AgendaListComponent implements OnInit {
     const paginaActual = Math.floor(this.inicio / 5) + 1;
     const totalPaginas = Math.ceil(this.agendas.length / 5);
     return `Página ${paginaActual} de ${totalPaginas}`;
+  }
+
+  actualizarAgendas(){
+    
+    this.mostrarEditarAgenda = false;
+    this.obtenerAgendas();
   }
 }

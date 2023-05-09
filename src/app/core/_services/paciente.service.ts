@@ -35,7 +35,7 @@ export class PacienteService {
     return this.http.post(`${this.base_url}/editarPacienteRut/${rut}`, data);
   }
 
-  registrarPacienteRut(data: any) {
+  registrarPaciente(data: any) {
     return this.http.post(`${this.base_url}/registrarPaciente`, data);
   }
   // desactivarPaciente(id: string): Observable<any> {

@@ -13,6 +13,9 @@
           <button type="button" class="btn btn-primary mr-2" (click)="mostrarComponenteModificarServicio()">Modificar un Servicio</button>
         </li>
         <li class="nav-item">
+          <button type="button" class="btn btn-primary mr-2" (click)="mostrarComponenteEliminarServicio()">Servicios mas solicitados</button>
+        </li>
+        <li class="nav-item">
           <button type="button" class="btn btn-primary mr-2" (click)="mostrarComponenteEliminarServicio()">Eliminar un Servicio</button>
         </li>
       </ul>
@@ -46,7 +49,7 @@
           <tbody>
             <tr *ngFor="let servicio of servicios.slice((paginaActual - 1) * numServicioPorPagina, paginaActual * numServicioPorPagina)">
               <td>{{ servicio.nombre }}</td>
-              <td>{{ servicio.costo | currency:'USD':'symbol':'1.0-0' }}</td>
+              <td>{{ servicio.costo | formatoCosto}}</td>
             </tr>
           </tbody>
         </table>

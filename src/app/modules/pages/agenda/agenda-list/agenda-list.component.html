@@ -1,6 +1,9 @@
 <div class="table-responsive mt-3" *ngIf="agendas.length > 0">
 
-  
+  <div class="card col-md-12" *ngIf="mostrarEditarAgenda">
+  <app-editar-agenda (cambiosRealizados)="actualizarAgendas()"></app-editar-agenda>
+</div>
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -22,13 +25,18 @@
     </thead>
     <tbody>
       <tr *ngFor="let agenda of agendas | slice:inicio:(inicio + 5)">
-        <td>{{ agenda.paciente.nombre }} {{ agenda.paciente.apellido }}</td>
-        <td>{{ agenda.paciente.rut }}</td>
-        <td>{{ agenda.fecha_agendamiento | date: 'dd/MM/yyyy' }}</td>
-        <td>{{ agenda.hora_agendamiento }}</td>
-        <td>{{ agenda.servicio.nombre }}</td>
-        <td>{{ agenda.estado.status }}</td>
-        <td>Acciones</td>
+        <td style="text-align: left; vertical-align: middle;">{{ agenda.paciente.nombre }} {{ agenda.paciente.apellido }}</td>
+        <td style="text-align: left; vertical-align: middle;">{{ agenda.paciente.rut }}</td>
+        <td style="text-align: left; vertical-align: middle;">{{ agenda.fecha_agendamiento | date: 'dd/MM/yyyy' }}</td>
+        <td style="text-align: left; vertical-align: middle;">{{ agenda.hora_agendamiento | hora | date: 'H:mm' }}</td>
+        <td style="text-align: left; vertical-align: middle;">{{ agenda.servicio.nombre }}</td>
+        <td style="text-align: left; vertical-align: middle;">{{ agenda.estado.status }}</td>
+        <td class="text-center">
+          <div class="d-inline-block">
+            <button class="btn btn-primary" (click)="mostrarComponenteEditarAgenda(agenda.id_agenda)">Editar</button>
+          </div>
+          
+        </td>
       </tr>
     </tbody>
   </table>

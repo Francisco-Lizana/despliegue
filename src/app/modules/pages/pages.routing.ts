@@ -9,6 +9,8 @@ import { GraficaPieComponent } from './grafica-pie/grafica-pie.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { PacientesComponent } from './pacientes/pacientes.component';
+import { CrearPacienteComponent } from './pacientes/crear-paciente/crear-paciente.component';
 
 const routes: Routes = [
   {
@@ -44,6 +46,20 @@ const routes: Routes = [
         component: ServiciosComponent,
         canActivate: [AuthGuard],
         data: { titulo: 'servicio' }
+      },
+      {
+        path: 'paciente',
+        component: PacientesComponent,
+        canActivate: [AuthGuard],
+        data: { titulo: 'pacientes' }
+        
+      },
+      {
+        path: 'addPaciente',
+        component: CrearPacienteComponent,
+        canActivate: [AuthGuard],
+        data: { titulo: 'Addpacientes' }
+        
       },
       { path: '', redirectTo: 'inicio', pathMatch: 'full' }
     ]
