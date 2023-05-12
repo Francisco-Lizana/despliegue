@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -17,7 +19,7 @@ import { ToastModule } from 'primeng/toast';
 
 @NgModule({
     declarations: [
-        SortPipe,
+        // SortPipe,
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
@@ -26,8 +28,6 @@ import { ToastModule } from 'primeng/toast';
     imports: [
         ToastModule,
         RouterModule,
-        FormsModule,
-        ReactiveFormsModule,
         HttpClientModule,
         CommonModule,
         MatAutocompleteModule,
