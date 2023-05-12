@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:stats":"ng build --configuration development --stats-json",
+    "analyze":"webpack-bundle-analyzer dist/tesis/stats.json"
+
   },
   "private": true,
   "dependencies": {
