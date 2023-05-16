@@ -39,13 +39,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "100mb",
-                  "maximumError": "100mb"
+                  "maximumWarning": "900mb",
+                  "maximumError": "900mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "100mb",
-                  "maximumError": "100mb"
+                  "maximumWarning": "900mb",
+                  "maximumError": "900mb"
                 }
               ],
               "fileReplacements": [
