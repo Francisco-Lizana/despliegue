@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "limpiacss":"purgecss --css ./src/**/*.css --content *.html --output ./limpiado"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +44,7 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "purgecss": "^5.0.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.8.3"
+    "typescript": "~4.8.3",
+    "webpack-bundle-analyzer": "^4.8.0"
   }
 }
