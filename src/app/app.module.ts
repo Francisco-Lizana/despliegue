@@ -7,7 +7,7 @@ import { PagesModule } from './modules/pages/pages.module';
 
 
 import { AppComponent } from './app.component';
-import { SharedModule } from './modules/shared/shared.module';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -36,7 +36,7 @@ import { SidebarComponent } from './modules/pages/sidebar/sidebar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
+  
     BrowserAnimationsModule,  
     MatProgressSpinnerModule,
    

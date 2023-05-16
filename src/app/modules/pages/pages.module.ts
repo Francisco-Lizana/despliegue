@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 
@@ -33,15 +31,20 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatListModule } from '@angular/material/list';
+import { ToastModule } from 'primeng/toast';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+import { SortPipe } from 'src/app/core/_pipes/sort.pipe';
 
 @NgModule({
   declarations: [
-
     InicioComponent,
     AccountSettingsComponent,
     GraficaPieComponent,
-    
     AgendaComponent,
     HoraPipe,
     AgendaListComponent,
@@ -61,29 +64,34 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     AgregarAgendaComponent,
     EditarAgendaComponent,
     CrearPacienteComponent,
-    HeaderComponent,
-    SidebarComponent
-
+ 
 
   ], exports: [
-
     InicioComponent,
     NgChartsModule,
     AccountSettingsComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
 
   ],
   imports: [
-
     MatNativeDateModule,
     MatDatepickerModule,
-    CommonModule,
-    SharedModule,
     RouterModule,
     NgChartsModule,
+    MatListModule,
+    ToastModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule,
+    MatListModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    MatCardModule,
 
-
-  ]
+  ],
+  providers: [SortPipe],
+  bootstrap: [],
 })
 export class PagesModule { }
