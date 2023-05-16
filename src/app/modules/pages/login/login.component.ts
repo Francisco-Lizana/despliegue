@@ -3,7 +3,7 @@ import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms
 import { Router } from '@angular/router';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { AuthService } from 'src/app/core/_services/auth.service';
-import { ToastService } from '../../../core/_services/toast.service';
+import { ToastService } from 'src/app/core/_services/toast.service';
 
 @Component({
   selector: 'app-login',

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
@@ -8,7 +8,6 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NgChartsModule } from 'ng2-charts';
 import { GraficaPieComponent } from './grafica-pie/grafica-pie.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
-import { ProfesionalInformacionComponent } from './account-settings/profesional-informacion/profesional-informacion.component';
 import { AgendaComponent } from './agenda/agenda.component';
 
 import { AgendaListComponent } from './agenda/agenda-list/agenda-list.component';
@@ -29,15 +28,20 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EditarAgendaComponent } from './agenda/editar-agenda/editar-agenda.component';
 import { CrearPacienteComponent } from './pacientes/crear-paciente/crear-paciente.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { LoginComponent } from './login/login.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent,
+
     InicioComponent,
     AccountSettingsComponent,
     GraficaPieComponent,
-    ProfesionalInformacionComponent,
+    
     AgendaComponent,
     HoraPipe,
     AgendaListComponent,
@@ -45,7 +49,11 @@ import { CrearPacienteComponent } from './pacientes/crear-paciente/crear-pacient
     ServiciosComponent,
     PacientesComponent,
     FichaClinicaComponent,
-    
+    HeaderComponent,
+    SidebarComponent,
+    BreadcrumbsComponent,
+    LoginComponent,
+    ToolbarComponent,
     ModificarServicioComponent,
     AgregarServicioComponent,
     EliminarServicioComponent,
@@ -53,14 +61,18 @@ import { CrearPacienteComponent } from './pacientes/crear-paciente/crear-pacient
     AgregarAgendaComponent,
     EditarAgendaComponent,
     CrearPacienteComponent,
-   
+    HeaderComponent,
+    SidebarComponent
 
-  
-  ],exports: [
-    DashboardComponent,
+
+  ], exports: [
+
     InicioComponent,
     NgChartsModule,
     AccountSettingsComponent,
+    HeaderComponent,
+    SidebarComponent
+
   ],
   imports: [
 
@@ -71,7 +83,7 @@ import { CrearPacienteComponent } from './pacientes/crear-paciente/crear-pacient
     RouterModule,
     NgChartsModule,
 
- 
+
   ]
 })
 export class PagesModule { }

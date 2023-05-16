@@ -17,8 +17,8 @@ import { ToastService } from './core/_services/toast.service';
 import { InicioComponent } from './modules/pages/inicio/inicio.component';
 import { NopagefoundComponent } from './modules/pages/nopagefound/nopagefound.component';
 import { PagesComponent } from './modules/pages/pages.component';
-import { SidebarComponent } from './modules/shared/components/sidebar/sidebar.component';
-import { authModule } from './modules/auth/auth.module';
+import { SidebarComponent } from './modules/pages/sidebar/sidebar.component';
+
 
 
 
@@ -39,7 +39,7 @@ import { authModule } from './modules/auth/auth.module';
     SharedModule,
     BrowserAnimationsModule,  
     MatProgressSpinnerModule,
-    authModule,
+   
     PagesModule,
    
     

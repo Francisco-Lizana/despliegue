@@ -1,9 +1,36 @@
-<div class="row">
-    <div class="col-12">
-        <app-profesional-informacion></app-profesional-informacion>
+<div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <h4>Datos personales</h4>
+          <form [formGroup]="profesionalForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="nombre" class="mr-2">Nombre:</label >
+                <input type="text" formControlName="nombre" class="form-control mr-2" [readonly]="mostrarInformacion">
+                <label for="apellido" class="mr-2">Apellido:</label >
+                <input type="text" formControlName="apellido" class="form-control" [readonly]="mostrarInformacion">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="direccion" class="mr-2">Dirección:</label >
+                <input type="text" formControlName="direccion" class="form-control mr-2" [readonly]="mostrarInformacion">
+                <label for="telefono" class="mr-2">Teléfono:</label >
+                <input type="text" formControlName="telefono" class="form-control" [readonly]="mostrarInformacion">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="mr-2">Email:</label >
+              <input type="text" formControlName="email" class="form-control" [readonly]="mostrarInformacion">
+            </div>
+          </form>
+          <button class="btn btn-primary mt-2" *ngIf="mostrarInformacion" (click)="toggleInformacion()">Editar</button>
+          <button class="btn btn-primary mr-2" *ngIf="!mostrarInformacion" (click)="guardarCambios()">Guardar</button>
+          <button class="btn btn-secondary" *ngIf="!mostrarInformacion" (click)="cancelarEdicion()">Cancelar</button>
+        </div>
+      </div>
     </div>
-</div>
-
+  </div>
+  
 <div class="row">
     <div class="col-4">
         <div class="card">

@@ -11,18 +11,15 @@ import { CommonModule } from '@angular/common';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 import { SortPipe } from 'src/app/core/_pipes/sort.pipe';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+
 
 import { ToastModule } from 'primeng/toast';
 
 @NgModule({
     declarations: [
         // SortPipe,
-        HeaderComponent,
-        SidebarComponent,
-        BreadcrumbsComponent,
+     
+        
 
     ],
     imports: [
@@ -45,9 +42,7 @@ import { ToastModule } from 'primeng/toast';
         MatInputModule,
         MatAutocompleteModule,
         MatCardModule,
-        HeaderComponent,
-        SidebarComponent,
-        BreadcrumbsComponent,
+      
     ],
 })
 export class SharedModule { }

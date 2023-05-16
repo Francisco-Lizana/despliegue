@@ -9,6 +9,8 @@ import { AgendaComponent } from './agenda/agenda.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { CrearPacienteComponent } from './pacientes/crear-paciente/crear-paciente.component';
+import { NotLoggedInGuard } from 'src/app/core/_guards/not-logged-in/not-logged-in.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -59,8 +61,9 @@ const routes: Routes = [
         data: { titulo: 'Addpacientes' }
         
       },
-      { path: '', redirectTo: 'inicio', pathMatch: 'full' }
-    ]
+      { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+ 
+]
   }
 ];
 
